@@ -1,0 +1,15 @@
+<h1><BR>BOLAS DE DRAGON Z</h1>
+<ul class="list-group" >
+      <li class="list-group-item" *ngFor="let per of personaje">PERSONAJE: {{per.nombre}} ||| PODER: {{per.poder}}</li>
+</ul>
+
+ <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+    <label for="name"> NOMBRE
+     <input class="form-control" name="nombre" ngModel required />
+    </label>
+    <label for="name"> PODER
+     <input class="form-control" name="poder" ngModel required />
+     </label>
+       <button type="submit">GUARDAR</button>
+  </form>
+        
