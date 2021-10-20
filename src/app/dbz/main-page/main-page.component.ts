@@ -7,34 +7,43 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent  {
-  personaje :Personaje[] =[per1,per2,per3,per4]
+  per1: Personaje = {
+    nombre:"antonio",
+    poder :23
+  
+  }
+   per2: Personaje = {
+    nombre:"pedro",
+    poder :65
+  
+  }
+   per3: Personaje = {
+    nombre:"cipriano",
+    poder :2
+  
+  }
+  per4: Personaje = {
+    nombre:"cristo",
+    poder :10000
+  
+  }
+  personaje :Personaje[] =[this.per1,this.per2,this.per3,this.per4]
+
 
     onSubmit(itemForm: NgForm) {
-      var li = document.createElement("li");
-      li.appendChild(document.createTextNode(txtVal));
-    }
+      let crearper: Personaje = {
+        nombre: itemForm.value.nombre,
+        poder : itemForm.value.poder
+      
+      }
+       this.personaje.push(crearper);
+     }
+
+   
+    
 }
+
 interface Personaje{
   nombre :string;
   poder :number;
-}
-let per1: Personaje = {
-  nombre:"antonio",
-  poder :23
-
-}
-let per2: Personaje = {
-  nombre:"pedro",
-  poder :65
-
-}
-let per3: Personaje = {
-  nombre:"cipriano",
-  poder :2
-
-}
-let per4: Personaje = {
-  nombre:"cristo",
-  poder :10000
-
 }
